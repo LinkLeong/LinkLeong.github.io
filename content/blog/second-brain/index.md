@@ -43,6 +43,9 @@ Mindmaps can be created by simply writing the items as a Markdown list within th
 </pre>
 </div>
 
+
+![Mac.png](https://youke1.picui.cn/s1/2025/09/24/68d3946a3caf3.png)
+
 renders as
 
 ```markmap {height="200px"}
