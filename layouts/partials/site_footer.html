@@ -4,11 +4,14 @@
   <div class="container">
     {{ if $show_copyright }}
     <div class="footer-content">
-      {{ with site.Params.footer.copyright.license.enable }}
+      {{ if site.Params.footer.copyright.license.enable }}
         <p class="license-text">
-          {{ $license_text := site.Params.footer.copyright.license.text | default "This work is licensed under {license}" }}
-          {{ $license_text = replace $license_text "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">%s</a>" site.Params.footer.copyright.license.url site.Params.footer.copyright.license.name) }}
-          {{ $license_text | markdownify}}
+          {{ $license_text := site.Params.footer.copyright.license.text | default "本作品采用 {license} 许可协议进行许可" }}
+          {{ if and site.Params.footer.copyright.license.name site.Params.footer.copyright.license.url }}
+            {{ $license_link := printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">%s</a>" site.Params.footer.copyright.license.url site.Params.footer.copyright.license.name }}
+            {{ $license_text = replace $license_text "{license}" $license_link }}
+          {{ end }}
+          {{ $license_text | markdownify }}
         </p>
       {{ end }}
       
