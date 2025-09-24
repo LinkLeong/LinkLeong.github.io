@@ -17,15 +17,15 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: 人工智能教授
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Stanford University
+  - name: 斯坦福大学
     url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: 我的研究兴趣包括分布式机器人、移动计算和可编程物质。
 
 # Social Networking
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -54,6 +54,4 @@ highlight_name: true
 website: ""
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include
-distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops
-self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Link Liang 是斯坦福人工智能实验室的人工智能教授。她的研究兴趣包括分布式机器人、移动计算和可编程物质。她领导机器人神经生物学小组，该小组开发自重构机器人、自组织机器人系统和移动传感器网络。
