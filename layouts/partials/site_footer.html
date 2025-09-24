@@ -1,19 +1,81 @@
 {{ $show_copyright := site.Params.footer.copyright.enable | default true }}
 
 <footer class="site-footer">
-  {{ if $show_copyright }}
-  <p class="powered-by">
-    {{ with site.Params.footer.copyright.license.enable }}
-      {{ $license_text := site.Params.footer.copyright.license.text | default "This work is licensed under {license}" }}
-      {{ $license_text = replace $license_text "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">%s</a>" site.Params.footer.copyright.license.url site.Params.footer.copyright.license.name) }}
-      {{ $license_text | markdownify}}
+  <div class="container">
+    {{ if $show_copyright }}
+    <div class="footer-content">
+      {{ with site.Params.footer.copyright.license.enable }}
+        <p class="license-text">
+          {{ $license_text := site.Params.footer.copyright.license.text | default "This work is licensed under {license}" }}
+          {{ $license_text = replace $license_text "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">%s</a>" site.Params.footer.copyright.license.url site.Params.footer.copyright.license.name) }}
+          {{ $license_text | markdownify}}
+        </p>
+      {{ end }}
+      
+      <p class="copyright-text">
+        {{ with site.Params.footer.copyright.notice }}
+          {{ . | markdownify }}
+        {{ else }}
+          © {year} {{ site.Params.author | default site.Title }}. {{ i18n "copyright" | default "保留所有权利" }}.
+        {{ end }}
+      </p>
+    </div>
     {{ end }}
-    
-    {{ with site.Params.footer.copyright.notice }}
-      {{ . | markdownify }}
-    {{ else }}
-      © {year} {{ site.Params.author | default site.Title }}. {{ i18n "copyright" | default "All rights reserved" }}.
-    {{ end }}
-  </p>
-  {{ end }}
+  </div>
 </footer>
+
+<style>
+.site-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+
+.license-text {
+  margin-bottom: 0.75rem;
+}
+
+.copyright-text {
+  font-weight: 500;
+}
+
+.footer-content a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    font-size: 0.8rem;
+  }
+}
+</style>
