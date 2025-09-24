@@ -57,5 +57,5 @@ features:
     enable: false
   repository:
     url: 'https://github.com/LinkLeong/LinkLeong.github.io/'
-    content_dir: starters/blog/content
+    content_dir: content
     branch: main
