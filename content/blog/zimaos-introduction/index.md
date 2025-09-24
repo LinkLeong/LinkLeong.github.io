@@ -63,11 +63,21 @@ ZimaOS 内置了丰富的应用商店，用户可以一键安装各种实用的�
 - 搭建私人影音库，随时观看收藏的电影和电视剧
 - 音乐流媒体服务，在任何设备上享受高品质音乐
 
-### 📸 图片展示
+### 📸 更多界面展示
 
 以下是 ZimaOS 的一些界面截图，展示了其优雅的设计和丰富的功能：
 
-{{< gallery album="zimaos" >}}
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+
+![ZimaOS 桌面界面](image1.jpg "ZimaOS 现代化的桌面环境")
+
+![ZimaOS 应用商店](image2.jpg "丰富的应用生态系统")
+
+![ZimaOS 使用场景](image3.jpg "ZimaOS 的多种使用场景")
+
+![ZimaOS 特色功能](featured.jpg "ZimaOS 让家庭云存储变得简单")
+
+</div>
 
 ### 个人云盘
 
