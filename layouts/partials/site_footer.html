@@ -1,0 +1,19 @@
+{{ $show_copyright := site.Params.footer.copyright.enable | default true }}
+
+<footer class="site-footer">
+  {{ if $show_copyright }}
+  <p class="powered-by">
+    {{ with site.Params.footer.copyright.license.enable }}
+      {{ $license_text := site.Params.footer.copyright.license.text | default "This work is licensed under {license}" }}
+      {{ $license_text = replace $license_text "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">%s</a>" site.Params.footer.copyright.license.url site.Params.footer.copyright.license.name) }}
+      {{ $license_text | markdownify}}
+    {{ end }}
+    
+    {{ with site.Params.footer.copyright.notice }}
+      {{ . | markdownify }}
+    {{ else }}
+      © {year} {{ site.Params.author | default site.Title }}. {{ i18n "copyright" | default "All rights reserved" }}.
+    {{ end }}
+  </p>
+  {{ end }}
+</footer>
